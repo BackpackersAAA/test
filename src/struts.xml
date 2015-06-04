@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="User" extends="struts-default" namespace="/User">
+		<action name="userAction" class="UserAction" >
+			<result name="RegisteredYES">/i.jsp</result>
+			<result name="RegisteredNO">/index.jsp</result>
+		</action>
+	</package> 
+	<package name="ScenicSpots" extends="struts-default" namespace="/ScenicSpots">
+		<action name="ssAction" class="ssAction" >
+			<result name="RegisteredYES">/index.jsp</result>
+			<result name="RegisteredNO">/index.jsp</result>
+		</action>
+		<action name="ssCommentsAction" class="ssCommentsAction" >
+			<result name="RegisteredYES">/index.jsp</result>
+			<result name="RegisteredNO">/index.jsp</result>
+		</action>
+		<action name="ssCollectionAction" class="ssCollectionAction" >
+			<result name="RegisteredYES">/index.jsp</result>
+			<result name="RegisteredNO">/index.jsp</result>
+		</action>
+	</package> 
+	<package name="TravelNotes" extends="struts-default" namespace="/TravelNotes">
+		<action name="tnAction" class="tnAction" >
+			<result name="RegisteredYES">/index.jsp</result>
+			<result name="RegisteredNO">/index.jsp</result>
+		</action>
+		<action name="tncAction" class="tncAction" >
+			<result name="RegisteredYES">/index.jsp</result>
+			<result name="RegisteredNO">/index.jsp</result>
+		</action>
+	</package> 
+</struts>    

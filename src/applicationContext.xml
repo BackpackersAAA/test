@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<context:annotation-config />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" />
+	<bean id="userDaoImpl" class="com.dao.UserDaoImpl" />
+	<bean id="UserAction" class="com.Action.UserAction" />
+	<bean id="userServiceImpl" class="com.Service.UserServiceImpl" />
+
+
+	<bean id="ssDaoImpl" class="com.dao.ScenicSpotsDaoImpl" />
+	<bean id="ssAction" class="com.Action.ScenicSpotsAction" />
+	<bean id="ssServiceImpl" class="com.Service.ScenicSpotsServiceImpl" />
+
+
+	<bean id="ssCommentsDaoImpl" class="com.dao.ScenicSpotsCommentsDaoImpl" />
+	<bean id="ssCommentsAction" class="com.Action.ScenicSpotsCommentsAction" />
+	<bean id="ssCommentsServiceImpl" class="com.Service.ScenicSpotsCommentsServiceImpl" />
+
+	<bean id="ssCollectionDaoImpl" class="com.dao.ScenicSpotsCollectionDaoImpl" />
+	<bean id="ssCollectionAction" class="com.Action.ScenicSpotsCollectionAction" />
+	<bean id="ssCollectionServiceImpl" class="com.Service.ScenicSpotsCollectionServiceImpl" />
+
+	<bean id="tnDaoImpl" class="com.dao.TravelNotesDaoImpl" />
+	<bean id="tnAction" class="com.Action.TravelNotesAction" />
+	<bean id="tnServiceImpl" class="com.Service.TravelNotesServiceImpl" />
+
+	<bean id="tncDaoImpl" class="com.dao.TravelNotesCommentsDaoImpl" />
+	<bean id="tncAction" class="com.Action.TravelNotesCommentsAction" />
+	<bean id="tncServiceImpl" class="com.Service.TravelNotesCommentsServiceImpl" />
+
+</beans>

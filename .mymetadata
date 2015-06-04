@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Backpackers"
+  id="myeclipse.1433308518488"
+  context-root="/Backpackers"
+  j2ee-spec="5.0"
+  archive="Backpackers.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
